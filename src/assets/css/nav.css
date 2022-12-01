@@ -1,0 +1,48 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+.hero-menu {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+.hero-menu button {
+    background: transparent;
+    border: none;
+}
+.hero-menu button a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #111;
+    text-decoration: none;
+    font-size: 17px;
+}
+.hero-menu button img {
+  width: 20px;
+}
+.menu-btn img {
+  width: 50px;
+}
+.cool-link {
+    display: inline-block;
+    color: #111;
+    text-decoration: none;
+  }
+  
+  .cool-link::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 0.678) 0%, rgba(253, 29, 29, 0.651) 50%, rgba(252, 176, 69, 0.719) 100%);
+    transition: width 0.3s;
+  }
+  
+  .cool-link:hover::after {
+    width: 100%;
+    /* //transition: width .3s; */
+  }
