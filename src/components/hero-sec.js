@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../assets/css/home.css";
 import HorizontalScroll from "react-scroll-horizontal";
 import straight from "../assets/img/straight.svg";
+import north from "../assets/img/north.svg";
+import vid from '../assets/video/vid2.webm'
 import horizontalScroll from "../js/horizontal-scroll";
 const Home = () => {
  const [time, setTime] = useState('')
@@ -12,11 +14,14 @@ const Home = () => {
   },1000)
   useEffect(()=> {
     horizontalScroll()
-  })
+  }, [])
   return (
     <>
       <div className="bg"></div>
       <div className="Home">
+        <div className="video">
+          <video src={vid} autoPlay loop></video>
+        </div>
         <div className="header">
           <p className="">
             WE CREATE <br />
@@ -61,14 +66,60 @@ const Home = () => {
 
       <div className="hero-works" id="work">
         <div className="sticky_wrapper">
-          <p>SEE SOME OF OUR WORK</p>
+          <p className="work-header">SEE SOME OF OUR WORK</p>
           <div className="flex_wrapper">
               <div className="box">
-                <div className="box-img"></div>
+                <div className="box-img">
+                  <video src={vid}></video>
+                </div>
+                <div className="box-link">
+                  <p>Artme</p>
+                  <a href="http://" target="_blank" rel="noopener noreferrer" title="see live">
+                    <img src={north} alt="" />
+                  </a>
+                </div>
               </div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
+
+              <div className="box">
+                <div className="box-img">
+                  <video src={vid}></video>
+                </div>
+                <div className="box-link">
+                  <p>Artme</p>
+                  <a href="http://" target="_blank" rel="noopener noreferrer" title="see live">
+                    <img src={north} alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="box">
+                <div className="box-img">
+                  <video src={vid}></video>
+                </div>
+                <div className="box-link">
+                  <p>Artme</p>
+                  <a href="http://" target="_blank" rel="noopener noreferrer" title="see live">
+                    <img src={north} alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="box">
+                <div className="box-img">
+                  <video src={vid}></video>
+                </div>
+                <div className="box-link">
+                  <p>Artme</p>
+                  <a href="http://" target="_blank" rel="noopener noreferrer" title="see live">
+                    <img src={north} alt="" />
+                  </a>
+                </div>
+              </div>
+              <div className="box">
+                <p>
+                 contact 
+                </p>
+              </div>
           </div>
           
           </div>
