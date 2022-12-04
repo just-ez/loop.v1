@@ -1,15 +1,22 @@
+// 
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+// import style
 import "../assets/css/home.css";
-import HorizontalScroll from "react-scroll-horizontal";
+
+// import svgs
 import straight from "../assets/img/straight.svg";
 import north from "../assets/img/north.svg";
+import back from "../assets/img/back.svg"
 import vid from '../assets/video/vid2.webm'
+
+// import js
 import horizontalScroll from "../js/horizontal-scroll";
 const Home = () => {
  const [time, setTime] = useState('')
   setInterval(()=> {
-   const myTime = new Date().toTimeString()
+   const myTime = new Date().toLocaleTimeString()
    setTime(myTime)
   },1000)
   useEffect(()=> {
@@ -26,19 +33,22 @@ const Home = () => {
           <p className="">
             WE CREATE <br />
             <span>BEST DIGITAL</span> <br />
-            PRODUCTS.
+            <span>PRODUCTS.</span>
           </p>
-        </div>
-        <div className="links">
-          <div className="discuss">
+          <div className="vid vid1"></div>
+          <div className="vid vid2"></div>
+           <div className="discuss">
             <div className="circle-1"></div>
             <div className="circle-2"></div>
             <Link to={"/contact"}>
               Discuss <br /> The Project
             </Link>
           </div>
-          <div className="time" style={{transition: "1s all"}}>
-            {time}
+        </div>
+        <div className="links">
+         
+          <div className="time" style={{transition: "1s all", fontWeight: "bold"}}>
+             {time}
           </div>
           <div className="link_to_what_we_Do cool-link">
             <Link to="">
@@ -66,7 +76,7 @@ const Home = () => {
 
       <div className="hero-works" id="work">
         <div className="sticky_wrapper">
-          <p className="work-header">SEE SOME OF OUR WORK</p>
+          <p className="work-header">*WORK*</p>
           <div className="flex_wrapper">
               <div className="box">
                 <div className="box-img">
@@ -116,9 +126,9 @@ const Home = () => {
                 </div>
               </div>
               <div className="box">
-                <p>
-                 contact 
-                </p>
+                <figure>
+                <img src={back} alt="" />
+                </figure>
               </div>
           </div>
           
