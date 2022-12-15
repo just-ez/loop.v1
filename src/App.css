@@ -2,7 +2,7 @@
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #eee;
+    background: rgba(253, 29, 29, 0.651);
     position: fixed;
     pointer-events: none;
     left: 0px;

@@ -22,10 +22,36 @@ const Home = () => {
   useEffect(()=> {
     horizontalScroll()
   }, [])
+
+  const [isVisible, setIsVisible] = useState(false)
+
+ 
+  let options = {
+      root: null,
+      rootMargin: "20px",
+      threshold: 0.25
+    };
+
+    useEffect(()=> {
+     
+      const observer = new IntersectionObserver((entries)=> {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  setIsVisible(entry.isIntersecting) 
+                  console.log(isVisible);
+              }
+             })
+      }, options)
+  
+    observer.observe(document.getElementById('disc'))
+    
+    
+    },[options])
+
   return (
     <>
       <div className="bg"></div>
-      <div className="Home">
+      <div className="Home" id="hero">
         <div className="video">
           <video src={vid} autoPlay loop></video>
         </div>
@@ -58,13 +84,13 @@ const Home = () => {
           </div>
         </div>
         <div className="heroTxt">
-          <div className="txt-1">
+          <div className="txt-1" style={{transform: isVisible ? 'translateY(0%)' : 'translateY(50%)'}} id='disc'>
             <p>
               WE ARE THE LEADERS IN WEB AND MOBILE <br />
               DESIGN AND DEVELOPMENT INDUSTRY.
             </p>
           </div>
-          <div className="txt-2">
+          <div className="txt-2" style={{transform: isVisible ? 'translateX(0%)' : 'translateX(50%)'}} id='disc'>
             we create quality content and cool ideas. we create websites,
             applications,
             <br />
@@ -80,7 +106,7 @@ const Home = () => {
           <div className="flex_wrapper">
               <div className="box">
                 <div className="box-img">
-                  <video src={vid}></video>
+                  <video src={vid} autoPlay loop ></video>
                 </div>
                 <div className="box-link">
                   <p>Artme</p>
@@ -92,7 +118,7 @@ const Home = () => {
 
               <div className="box">
                 <div className="box-img">
-                  <video src={vid}></video>
+                  <video src={vid} autoPlay loop></video>
                 </div>
                 <div className="box-link">
                   <p>Artme</p>
@@ -104,7 +130,7 @@ const Home = () => {
 
               <div className="box">
                 <div className="box-img">
-                  <video src={vid}></video>
+                  <video src={vid} autoPlay loop></video>
                 </div>
                 <div className="box-link">
                   <p>Artme</p>
@@ -116,7 +142,7 @@ const Home = () => {
 
               <div className="box">
                 <div className="box-img">
-                  <video src={vid}></video>
+                  <video src={vid} autoPlay loop></video>
                 </div>
                 <div className="box-link">
                   <p>Artme</p>
@@ -127,7 +153,9 @@ const Home = () => {
               </div>
               <div className="box">
                 <figure>
-                <img src={back} alt="" />
+               <Link to='#hero'>
+               <img src={back} alt="" />
+               </Link>
                 </figure>
               </div>
           </div>
